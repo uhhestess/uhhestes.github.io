@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Название Сайта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', cursive;
+        }
+
+        /* Стили для шапки */
+  .site-header {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .header-content {
+    font-stretch: ultra-condensed;
+    max-width: 1200px;
+    margin: 1 auto;
+    padding: 0 20px;
+  }
+
+  .logo-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+  }
+
+  .site-logo {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .company-name {
+    color: #333333;
+    font-size: 2.2rem;
+    margin: 0;
+    font-family: 'Minion Web', sans-serif;
+    font-stretch: ultra-condensed
+    font-weight: bold;
+  }
+
+  /* Эффект при наведении */
+  .logo-title-wrapper:hover .site-logo {
+    transform: scale(1.05);
+  }
+
+  .logo-title-wrapper:hover .company-name {
+    color: #0066cc;
+  }
+
+        /* Герой секция */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #6486B4, #3D506A);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #AE3127;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #EC8179;
+        }
+
+        /* Основной контент */
+        .features {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+        }
+     /* Базовые стили */
+  .contact-footer {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #ecf0f1;
+  }
+
+  /* Стили контактной информации */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+
+  .fas {
+    font-size: 1.2rem;
+    color: #3498db;
+  }
+
+  .contact-link {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-link:hover {
+    color: #3498db;
+  }
+
+  /* Стили формы */
+  .feedback-form {
+    flex: 0 1 400px;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #34495e;
+    background: #34495e;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+
+  .form-textarea {
+    resize: vertical;
+  }
+
+  .submit-btn {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .submit-btn:hover {
+    background: #2980b9;
+  }
+
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+    
+    .feedback-form {
+      width: 100%;
+    }
+  }
+</style>
+
+<!-- Подключение иконок Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-content">
+    <a href="/" class="logo-title-wrapper">
+<iframe src="https://assets.pinterest.com/ext/embed.html?id=678847343871916220" height="336" width="236" frameborder="0" scrolling="no" 
+
+        alt="QA"
+        class="site-logo"
+        width="150"
+        height="150" >
+    </iframe>
+      <h1 class="company-name">Quicker Analytics</h1>
+    </a>
+  </div>
+</header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Расширяем возможности с помощью передовых IT-решений</h1>
+<p></p>
+<p></p>
+            <p>Мы стремимся продвигать ваш бизнес с помощью инновационных решений в области бизнес-анализа, разработки технологических процессов и тестирования программного обеспечения.</p>
+
+<p>Наша цель - стать ведущим партнером для компаний, которым требуются комплексные решения в области ИТ-консалтинга, проектирования технологических процессов и разработки программного обеспечения.</p>
+
+            <button class="cta-button">Связаться с нами</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+
+
+            <div class="feature-card">
+                <h3>Цифровая трансформация</h3>
+<p></p>
+<p>Раскройте потенциал цифровизации вместе с нами. Оптимизируйте процессы, повышайте эффективность и продвигайте свой бизнес в цифровую эпоху. Наши преобразующие решения используют передовые технологии для стимулирования роста вашего бизнеса. Переходите на цифровые технологии сегодня, чтобы стать умнее завтра.</p>
+            </div>
+
+    <div class="feature-card">
+                <h3>Бизнес-консалтинг и анализ</h3>
+<p></p>
+<p>Уверенно ориентируйтесь в сложностях делового мира, преобразуя процесс принятия решений с помощью комплексных услуг бизнес-анализа, основанных на данных. Наши опытные аналитики глубоко разбираются в тонкостях организации, выявляя возможности и угрозы, чтобы предоставить стратегические рекомендации, которые помогут принимать обоснованные решения. </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Разработка программного обеспечения</h3>
+<p></p>
+ <p>Расширьте свое присутствие в Интернете с помощью наших индивидуальных решений для разработки программного обеспечения. Используйте мощь инноваций и технологий для продвижения вашего бизнеса. Сотрудничайте с нами, чтобы воплотить свои идеи в реальность и оставаться впереди в современном динамичном цифровом мире.</p>
+            </div>
+            <div class="feature-card">
+
+                <h3>Инновации технологических процессов</h3>
+<p></p>
+                <p>Мы повышаем эффективность в области точного проектирования технологических процессов. Гарантия тщательного анализа, разработки и внедрения оптимизированных процессов для повышения производительности. Современный подход обеспечит плавный переход, способствуя развитию культуры постоянного совершенствования и адаптивности. </p>
+            </div>
+
+<div class="feature-card">
+                <h3>Тестирование программного обеспечения</h3>
+<p></p>
+<p>Обеспечьте надежность и производительность ваших программных приложений с помощью наших надежных методик тестирования. От функционального и процессного этапа до безопасности системы мы гарантируем, что ваше программное обеспечение будет соответствовать требованиям постоянно меняющегося цифрового ландшафта.</p>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <footer class="contact-footer">
+  <div class="footer-container">
+    <!-- Блок контактов -->
+    <div class="contact-info">
+      <h3 class="footer-title">Свяжитесь с нами</h3>
+      
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <address class="contact-text">
+          г. Москва, ул. Красноказарменная, д. 13С, офис 313
+        </address>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+74951234567" class="contact-link">
+          +7 (950) 245-37-31
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:ikuznecova4417@icloud.com" class="contact-link">
+          kuznecova4417@icloud.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div class="feedback-form">
+      <h3 class="footer-title">Обратная связь</h3>
+      <form action="#" method="POST">
+        <input type="text" 
+               name="name" 
+               placeholder="Ваше имя"
+               class="form-input"
+               required>
+        
+        <input type="email" 
+               name="email" 
+               placeholder="Email"
+               class="form-input"
+               required>
+        
+        <textarea name="message" 
+                  placeholder="Сообщение"
+                  class="form-textarea"
+                  rows="4"
+                  required></textarea>
+        
+        <button type="submit" class="submit-btn">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
